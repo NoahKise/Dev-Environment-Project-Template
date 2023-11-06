@@ -24,3 +24,13 @@ Entry.prototype.letterCount = function () {
   }
   return { vowelCount, conCount };
 };
+
+Entry.prototype.teaser = function() {
+  const periodArray = this.body.split(".");
+  const exArray = periodArray[0].split("!");
+  const qArray = exArray[0].split("?");
+  const teaser = qArray[0].split(" ");
+  const finalTeaser = teaser.slice(0, 8);
+  const teaserString = finalTeaser.join(" ");
+  return teaserString;
+}

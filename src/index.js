@@ -8,9 +8,10 @@ function handleJournalForm(event) {
   const titleInput = document.getElementById("inputTitle").value;
   const entryInput = document.getElementById("inputEntry").value;
   const inputEntryObject = new Entry(titleInput, entryInput);
-  document.getElementById("wordCount").innerText = inputEntryObject.wordCount();
-  document.getElementById("vowelCount").innerText = inputEntryObject.letterCount().vowelCount;
-  document.getElementById("conCount").innerText = inputEntryObject.letterCount().conCount;
+  document.getElementById("wordCount").innerText = "Word Count: " + inputEntryObject.wordCount();
+  document.getElementById("vowelCount").innerText = "Vowel Count: " + inputEntryObject.letterCount().vowelCount;
+  document.getElementById("conCount").innerText = "Consonant Count: " + inputEntryObject.letterCount().conCount;
+  document.getElementById("teaser").innerText = "A Teaser for this Entry: " + inputEntryObject.teaser() + "...";
 }
 
 window.addEventListener("load", function () {
