@@ -3,26 +3,24 @@ export default function Entry(title, body) {
   this.body = body;
 }
 
-Entry.prototype.wordCount = function() {
+Entry.prototype.wordCount = function () {
   const entryArray = this.body.split(" ");
   const numberOfWords = entryArray.length;
   return numberOfWords;
 };
 
-Entry.prototype.letterCount = function() {
-  const lettersArray = this.body.split("");
+Entry.prototype.letterCount = function () {
+  const lettersArray = this.body.toLowerCase().split("");
   const vowelArray = ["a", "e", "i", "o", "u"];
-  const space = " ";
+  const conArray = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"];
   let vowelCount = 0;
-  let consonantCount = 0;
+  let conCount = 0;
   for (let i = 0; i < lettersArray.length; i++) {
     if (vowelArray.includes(lettersArray[i])) {
       vowelCount += 1;
-    } else if (space.includes(lettersArray[i])) {
-      null;
-    } else {
-      consonantCount += 1;
-    }
+    } else if (conArray.includes(lettersArray[i])) {
+      conCount += 1;
+    } 
   }
-return {vowelCount, consonantCount};
+  return { vowelCount, conCount };
 };
