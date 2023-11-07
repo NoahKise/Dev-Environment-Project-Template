@@ -12,6 +12,7 @@ function handleJournalForm(event) {
   document.getElementById("vowelCount").innerText = "Vowel Count: " + inputEntryObject.letterCount().vowelCount;
   document.getElementById("conCount").innerText = "Consonant Count: " + inputEntryObject.letterCount().conCount;
   document.getElementById("teaser").innerText = "A Teaser for this Entry: " + inputEntryObject.teaser() + "...";
+  document.getElementById("fullEntry").innerText = inputEntryObject.body;
 }
 
 window.addEventListener("load", function () {
